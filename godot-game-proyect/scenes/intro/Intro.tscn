@@ -1,0 +1,2754 @@
+[gd_scene load_steps=109 format=2]
+
+[ext_resource path="res://assets/images/intro/viñeta_1a.png" type="Texture" id=1]
+[ext_resource path="res://assets/images/intro/vineta_2b.png" type="Texture" id=2]
+[ext_resource path="res://assets/images/snow.png" type="Texture" id=3]
+[ext_resource path="res://scenes/intro/snow.gd" type="Script" id=4]
+[ext_resource path="res://assets/images/intro/viñeta_6a.png" type="Texture" id=5]
+[ext_resource path="res://assets/images/intro/viñeta_5a.png" type="Texture" id=6]
+[ext_resource path="res://assets/images/intro/vineta_1b.png" type="Texture" id=7]
+[ext_resource path="res://assets/images/intro/vineta_3b.png" type="Texture" id=8]
+[ext_resource path="res://assets/images/intro/viñeta_4a.png" type="Texture" id=9]
+[ext_resource path="res://assets/images/intro/viñeta_11a.png" type="Texture" id=10]
+[ext_resource path="res://assets/images/intro/viñeta_2a.png" type="Texture" id=11]
+[ext_resource path="res://assets/images/intro/viñeta_7a.png" type="Texture" id=12]
+[ext_resource path="res://assets/images/intro/vineta_7b.png" type="Texture" id=13]
+[ext_resource path="res://assets/images/intro/vineta_9b.png" type="Texture" id=14]
+[ext_resource path="res://assets/images/intro/vineta_10b.png" type="Texture" id=15]
+[ext_resource path="res://assets/images/intro/vineta_8b.png" type="Texture" id=16]
+[ext_resource path="res://assets/images/intro/viñeta_9a.png" type="Texture" id=17]
+[ext_resource path="res://assets/images/intro/viñeta_10a.png" type="Texture" id=18]
+[ext_resource path="res://assets/images/intro/vineta_4b.png" type="Texture" id=19]
+[ext_resource path="res://assets/images/intro/viñeta_8a.png" type="Texture" id=20]
+[ext_resource path="res://assets/images/intro/viñeta_3a.png" type="Texture" id=21]
+[ext_resource path="res://assets/images/intro/vineta_11b.png" type="Texture" id=22]
+[ext_resource path="res://assets/images/sign_1.png" type="Texture" id=23]
+[ext_resource path="res://assets/images/sign_2.png" type="Texture" id=24]
+[ext_resource path="res://assets/images/intro/vineta_6b.png" type="Texture" id=25]
+[ext_resource path="res://scenes/intro/Intro.gd" type="Script" id=26]
+[ext_resource path="res://scenes/intro/Image.gd" type="Script" id=27]
+[ext_resource path="res://assets/images/fondo_de_montaña 0.1.png" type="Texture" id=28]
+[ext_resource path="res://assets/audio/rock_breaking.ogg" type="AudioStream" id=29]
+[ext_resource path="res://scenes/intro/Image1.gd" type="Script" id=30]
+[ext_resource path="res://assets/audio/quiver-leather-squeeze-02.wav" type="AudioStream" id=31]
+[ext_resource path="res://assets/audio/jump.wav" type="AudioStream" id=32]
+[ext_resource path="res://assets/audio/move1.wav" type="AudioStream" id=33]
+[ext_resource path="res://assets/audio/move2.wav" type="AudioStream" id=34]
+[ext_resource path="res://assets/audio/amb_mountains.ogg" type="AudioStream" id=35]
+[ext_resource path="res://scenes/intro/Camera2D.gd" type="Script" id=36]
+[ext_resource path="res://assets/images/dialog/narrador_1.png" type="Texture" id=37]
+[ext_resource path="res://assets/images/dialog/efectos_ambientales_1.png" type="Texture" id=38]
+[ext_resource path="res://assets/images/dialog/dialogos_1.1.png" type="Texture" id=39]
+[ext_resource path="res://assets/images/dialog/dialogos_2.1.png" type="Texture" id=40]
+[ext_resource path="res://assets/images/dialog/narrador_2.png" type="Texture" id=41]
+[ext_resource path="res://assets/images/dialog/dialogos_3.1.png" type="Texture" id=42]
+[ext_resource path="res://assets/images/dialog/efectos_ambientales_4.png" type="Texture" id=43]
+[ext_resource path="res://assets/images/dialog/efectos_ambientales_3.png" type="Texture" id=44]
+[ext_resource path="res://assets/images/dialog/dialogos_4.1.png" type="Texture" id=45]
+[ext_resource path="res://assets/images/dialog/efectos_ambientales_5.png" type="Texture" id=46]
+[ext_resource path="res://assets/images/dialog/dialogos_5.1.png" type="Texture" id=47]
+[ext_resource path="res://assets/images/dialog/efectos_ambientales_6.png" type="Texture" id=48]
+[ext_resource path="res://assets/images/dialog/narrador_3.png" type="Texture" id=49]
+[ext_resource path="res://assets/images/dialog/efectos_ambientales_7.png" type="Texture" id=50]
+[ext_resource path="res://effects/snow.tscn" type="PackedScene" id=53]
+[ext_resource path="res://assets/images/iu/Icono_1b.png" type="Texture" id=54]
+[ext_resource path="res://assets/images/iu/Icono_1a.png" type="Texture" id=55]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 605, 619 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 605, 0, 605, 619 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=4]
+resource_name = "init"
+length = 0.001
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("snow/Viewport/snow:pause")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 2, 3.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("main/AnimatedSprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2, 2.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, false, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("main/AnimatedSprite:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 2, 3.95 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("dialog1:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.45 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("dialog2:visible")
+tracks/4/interp = 0
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = false
+tracks/4/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, false ]
+}
+tracks/5/type = "method"
+tracks/5/path = NodePath(".")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 1.95 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "sound"
+} ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("dialog2:rotation_degrees")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = false
+tracks/6/keys = {
+"times": PoolRealArray( 2, 2.1, 2.15, 2.25, 2.35, 2.45, 2.55, 2.65, 2.75, 2.85, 2.95, 3.05, 3.15, 3.25, 3.35, 3.45, 3.55, 3.65, 3.75 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -10.0, 10.0, -10.0, 10.0, -8.0, 8.0, -6.0, 6.0, -6.0, 6.0, -4.0, 4.0, -4.0, 4.0, -2.0, 2.0, -1.0, 1.0, 0.0 ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 4.0
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("snow/Viewport/snow:pause")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 2, 3.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("main/AnimatedSprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2, 2.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, false, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("main/AnimatedSprite:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 2, 3.95 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("dialog1:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.45 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("dialog2:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = false
+tracks/4/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/5/type = "method"
+tracks/5/path = NodePath(".")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 1.95 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "sound"
+} ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("dialog2:rotation_degrees")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = false
+tracks/6/keys = {
+"times": PoolRealArray( 2, 2.1, 2.15, 2.25, 2.35, 2.45, 2.55, 2.65, 2.75, 2.85, 2.95, 3.05, 3.15, 3.25, 3.35, 3.45, 3.55, 3.65, 3.75 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -10.0, 10.0, -10.0, 10.0, -8.0, 8.0, -6.0, 6.0, -6.0, 6.0, -4.0, 4.0, -4.0, 4.0, -2.0, 2.0, -1.0, 1.0, 0.0 ]
+}
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 502, 303 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 502, 0, 502, 303 )
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ SubResource( 6 ), SubResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 8.0
+} ]
+
+[sub_resource type="Animation" id=9]
+resource_name = "init"
+length = 0.001
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("sign:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.16 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("main/AnimatedSprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.14 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("dialog:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.12 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[sub_resource type="Animation" id=10]
+length = 0.8
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("sign:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.16 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("main/AnimatedSprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.14 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("dialog:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.12 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[sub_resource type="Animation" id=11]
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("../../Camera2D:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.31, 0.38, 0.49, 0.61, 0.69, 0.82, 0.91, 0.97 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -10.0, 10.0, -8.0, 8.0, -6.0, 6.0, -4.0, 4.0, -2.0, 2.0, 0.0 ]
+}
+
+[sub_resource type="AtlasTexture" id=12]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 502, 313 )
+
+[sub_resource type="AtlasTexture" id=13]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 502, 0, 502, 313 )
+
+[sub_resource type="SpriteFrames" id=14]
+animations = [ {
+"frames": [ SubResource( 12 ), SubResource( 13 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="StreamTexture" id=15]
+flags = 4
+load_path = "res://.import/snow.png-5b7f133c4fce9b46a48304a38f0e98e2.stex"
+
+[sub_resource type="GDScript" id=16]
+script/source = "tool
+extends CPUParticles2D
+export (bool) var pause setget set_pause
+export (float) var speed = 0.2
+
+func set_pause(value):
+    pause = value
+    speed_scale = speed if !pause else 0
+    
+    
+
+
+"
+
+[sub_resource type="Animation" id=17]
+resource_name = "init"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("main/AnimatedSprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("main/AnimatedSprite:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("sign1:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("sign2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("snow/Viewport/snow:pause")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ false, true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("dialog:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=18]
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("main/AnimatedSprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("main/AnimatedSprite:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("sign1:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("sign2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("snow/Viewport/snow:pause")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ false, true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("dialog:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="AtlasTexture" id=19]
+flags = 4
+atlas = ExtResource( 19 )
+region = Rect2( 0, 0, 689, 615 )
+
+[sub_resource type="AtlasTexture" id=20]
+flags = 4
+atlas = ExtResource( 19 )
+region = Rect2( 689, 0, 689, 615 )
+
+[sub_resource type="SpriteFrames" id=21]
+animations = [ {
+"frames": [ SubResource( 19 ), SubResource( 20 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=22]
+resource_name = "init"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("main/AnimatedSprite:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("snow/Viewport/snow:pause")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("main/AnimatedSprite:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../../mountain:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("../../mountain:pitch_scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.11 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("../../mountain:volume_db")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -6.367 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("dialog3:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("dialog2:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("dialog1:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("dialog3:rotation_degrees")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 5.0, 25.0, 5.0, 25.0, 6.0, 23.0, 6.0, 22.0, 7.0, 21.0, 9.0, 20.0, 8.0, 19.0, 11.0, 18.0, 12.0, 17.0, 14.0, 17.0, 14.0, 16.0, 15.0 ]
+}
+
+[sub_resource type="Animation" id=23]
+length = 2.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("main/AnimatedSprite:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("snow/Viewport/snow:pause")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("main/AnimatedSprite:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../../mountain:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("../../mountain:pitch_scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.11 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("../../mountain:volume_db")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -6.367 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("dialog3:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = false
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("dialog2:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = false
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("dialog1:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = false
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("dialog3:rotation_degrees")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = false
+tracks/9/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 5.0, 25.0, 5.0, 25.0, 6.0, 23.0, 6.0, 22.0, 7.0, 21.0, 9.0, 20.0, 8.0, 19.0, 11.0, 18.0, 12.0, 17.0, 14.0, 17.0, 14.0, 16.0, 15.0 ]
+}
+
+[sub_resource type="Animation" id=24]
+resource_name = "init"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("snow/Viewport/snow:pause")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("AudioStreamPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 31 )
+} ],
+"times": PoolRealArray( 0.1 )
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("dialog:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("dialog2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, false ]
+}
+
+[sub_resource type="Animation" id=25]
+tracks/0/type = "value"
+tracks/0/path = NodePath("snow/Viewport/snow:pause")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("AudioStreamPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 31 )
+} ],
+"times": PoolRealArray( 0.1 )
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("dialog:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("dialog2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = false
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[sub_resource type="AtlasTexture" id=26]
+flags = 4
+atlas = ExtResource( 25 )
+region = Rect2( 0, 0, 607, 819 )
+
+[sub_resource type="AtlasTexture" id=27]
+flags = 4
+atlas = ExtResource( 25 )
+region = Rect2( 607, 0, 607, 819 )
+
+[sub_resource type="SpriteFrames" id=28]
+animations = [ {
+"frames": [ SubResource( 26 ), SubResource( 27 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=29]
+resource_name = "init"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("snow/Viewport/snow:pause")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("main/AnimatedSprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("main/AnimatedSprite:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/3/type = "audio"
+tracks/3/path = NodePath("AudioStreamPlayer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 32 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=30]
+tracks/0/type = "value"
+tracks/0/path = NodePath("snow/Viewport/snow:pause")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("main/AnimatedSprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("main/AnimatedSprite:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/3/type = "audio"
+tracks/3/path = NodePath("AudioStreamPlayer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 32 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="AtlasTexture" id=31]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 0, 0, 607, 819 )
+
+[sub_resource type="AtlasTexture" id=32]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 607, 0, 607, 819 )
+
+[sub_resource type="SpriteFrames" id=33]
+animations = [ {
+"frames": [ SubResource( 31 ), SubResource( 32 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=34]
+resource_name = "init"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("snow/Viewport/snow:pause")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("main/AnimatedSprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("main/AnimatedSprite:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("sign:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("../../mountain:pitch_scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.35 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("../../mountain:volume_db")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -1.294 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("dialog:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[sub_resource type="Animation" id=35]
+length = 2.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("snow/Viewport/snow:pause")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("main/AnimatedSprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("main/AnimatedSprite:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("sign:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("../../mountain:pitch_scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.35 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("../../mountain:volume_db")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -1.294 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("dialog:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[sub_resource type="AtlasTexture" id=36]
+flags = 4
+atlas = ExtResource( 16 )
+region = Rect2( 0, 0, 563, 236 )
+
+[sub_resource type="AtlasTexture" id=37]
+flags = 4
+atlas = ExtResource( 16 )
+region = Rect2( 563, 0, 563, 236 )
+
+[sub_resource type="SpriteFrames" id=38]
+animations = [ {
+"frames": [ SubResource( 36 ), SubResource( 37 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=39]
+resource_name = "init"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("main/AnimatedSprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("main/AnimatedSprite:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("snow/Viewport/snow:pause")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/3/type = "audio"
+tracks/3/path = NodePath("AudioStreamPlayer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 33 )
+} ],
+"times": PoolRealArray( 0 )
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("dialog2:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 6.0, 24.0, 8.0, 22.0, 10.0, 18.0, 13.0, 17.0, 14.0, 15.0 ]
+}
+
+[sub_resource type="Animation" id=40]
+tracks/0/type = "value"
+tracks/0/path = NodePath("main/AnimatedSprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("main/AnimatedSprite:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("snow/Viewport/snow:pause")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/3/type = "audio"
+tracks/3/path = NodePath("AudioStreamPlayer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 33 )
+} ],
+"times": PoolRealArray( 0 )
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("dialog2:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 6.0, 24.0, 8.0, 22.0, 10.0, 18.0, 13.0, 17.0, 14.0, 15.0 ]
+}
+
+[sub_resource type="AtlasTexture" id=41]
+flags = 4
+atlas = ExtResource( 14 )
+region = Rect2( 0, 0, 563, 281 )
+
+[sub_resource type="AtlasTexture" id=42]
+flags = 4
+atlas = ExtResource( 14 )
+region = Rect2( 563, 0, 563, 281 )
+
+[sub_resource type="SpriteFrames" id=43]
+animations = [ {
+"frames": [ SubResource( 41 ), SubResource( 42 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=44]
+resource_name = "init"
+length = 0.001
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("main/AnimatedSprite:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("main/AnimatedSprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("snow/Viewport/snow:pause")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/3/type = "audio"
+tracks/3/path = NodePath("AudioStreamPlayer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 34 )
+} ],
+"times": PoolRealArray( 0 )
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("dialog2:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -10.0, 10.0, -8.0, 8.0, -6.0, 6.0, -4.0, 4.0, -4.0, 4.0, 0.0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("dialog3:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 6.0, 22.0, 8.0, 20.0, 8.0, 20.0, 8.0, 18.0, 8.0, 16.0, 15.0 ]
+}
+
+[sub_resource type="Animation" id=45]
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("main/AnimatedSprite:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("main/AnimatedSprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("snow/Viewport/snow:pause")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/3/type = "audio"
+tracks/3/path = NodePath("AudioStreamPlayer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 34 )
+} ],
+"times": PoolRealArray( 0 )
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("dialog2:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -10.0, 10.0, -8.0, 8.0, -6.0, 6.0, -4.0, 4.0, -4.0, 4.0, 0.0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("dialog3:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 6.0, 22.0, 8.0, 20.0, 8.0, 20.0, 8.0, 18.0, 8.0, 16.0, 15.0 ]
+}
+
+[sub_resource type="AtlasTexture" id=46]
+flags = 4
+atlas = ExtResource( 22 )
+region = Rect2( 0, 0, 774, 819 )
+
+[sub_resource type="AtlasTexture" id=47]
+flags = 4
+atlas = ExtResource( 22 )
+region = Rect2( 774, 0, 774, 819 )
+
+[sub_resource type="SpriteFrames" id=48]
+animations = [ {
+"frames": [ SubResource( 46 ), SubResource( 47 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=49]
+resource_name = "init"
+length = 0.001
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("main/AnimatedSprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.03 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("../..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1.93 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "stop_sound"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("dialog1:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1.92, 2.89 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("dialog1:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1.98 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("dialog2:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = false
+tracks/4/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("dialog3:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = false
+tracks/5/keys = {
+"times": PoolRealArray( 0, 2.03 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("dialog3:rotation_degrees")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = false
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.12, 0.22, 0.31, 0.4, 0.46, 0.56, 0.63, 0.72, 0.79, 0.89, 1.01, 1.11, 1.2, 1.29, 1.35, 1.45, 1.52, 1.61, 1.68, 1.78, 1.85, 1.93, 2.01 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 6.0, 20.0, 6.0, 20.0, 8.0, 18.0, 8.0, 18.0, 8.0, 18.0, 6.0, 20.0, 6.0, 20.0, 8.0, 18.0, 8.0, 18.0, 8.0, 18.0, 8.0, 18.0, 8.0, 18.0 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("dialog2:rotation_degrees")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = false
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.12, 0.22, 0.32, 0.42, 0.49, 0.58, 0.65, 0.74, 0.81, 0.91, 1.03, 1.13, 1.23, 1.33, 1.4, 1.49, 1.56, 1.65, 1.72, 1.82, 1.91, 1.98 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 6.0, 20.0, 6.0, 20.0, 8.0, 18.0, 8.0, 18.0, 8.0, 18.0, 6.0, 20.0, 6.0, 20.0, 8.0, 18.0, 8.0, 18.0, 8.0, 18.0, 18.0, 8.0, 18.0 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("../../mountain:volume_db")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 1.46, 2.06 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ -8.904, -8.904, -40.904 ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("../../mountain:pitch_scale")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.32 ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("main/AnimatedSprite:playing")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 1.95 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("snow/Viewport/snow:pause")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 0.63, 2.14 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, false, true ]
+}
+
+[sub_resource type="Animation" id=50]
+length = 4.0
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("main/AnimatedSprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.03 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("../..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1.93 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "stop_sound"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("dialog1:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1.92, 2.89 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("dialog1:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1.98 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("dialog2:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = false
+tracks/4/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("dialog3:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = false
+tracks/5/keys = {
+"times": PoolRealArray( 0, 2.03 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("dialog3:rotation_degrees")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = false
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.12, 0.22, 0.31, 0.4, 0.46, 0.56, 0.63, 0.72, 0.79, 0.89, 1.01, 1.11, 1.2, 1.29, 1.35, 1.45, 1.52, 1.61, 1.68, 1.78, 1.85, 1.93, 2.01 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 6.0, 20.0, 6.0, 20.0, 8.0, 18.0, 8.0, 18.0, 8.0, 18.0, 6.0, 20.0, 6.0, 20.0, 8.0, 18.0, 8.0, 18.0, 8.0, 18.0, 8.0, 18.0, 8.0, 18.0 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("dialog2:rotation_degrees")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = false
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.12, 0.22, 0.32, 0.42, 0.49, 0.58, 0.65, 0.74, 0.81, 0.91, 1.03, 1.13, 1.23, 1.33, 1.4, 1.49, 1.56, 1.65, 1.72, 1.82, 1.91, 1.98 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 6.0, 20.0, 6.0, 20.0, 8.0, 18.0, 8.0, 18.0, 8.0, 18.0, 6.0, 20.0, 6.0, 20.0, 8.0, 18.0, 8.0, 18.0, 8.0, 18.0, 18.0, 8.0, 18.0 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("../../mountain:volume_db")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 1.46, 2.06 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ -8.904, -8.904, -40.904 ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("../../mountain:pitch_scale")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.32 ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("main/AnimatedSprite:playing")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 1.95 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("snow/Viewport/snow:pause")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 0.63, 2.14 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, false, true ]
+}
+
+[sub_resource type="AtlasTexture" id=51]
+flags = 4
+atlas = ExtResource( 15 )
+region = Rect2( 0, 0, 563, 303 )
+
+[sub_resource type="AtlasTexture" id=52]
+flags = 4
+atlas = ExtResource( 15 )
+region = Rect2( 563, 0, 563, 303 )
+
+[sub_resource type="SpriteFrames" id=53]
+animations = [ {
+"frames": [ SubResource( 51 ), SubResource( 52 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=54]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("snow/Viewport/snow:pause")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("main/AnimatedSprite:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("main/AnimatedSprite:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "audio"
+tracks/3/path = NodePath("AudioStreamPlayer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 33 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=55]
+tracks/0/type = "value"
+tracks/0/path = NodePath("snow/Viewport/snow:pause")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("main/AnimatedSprite:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("main/AnimatedSprite:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "audio"
+tracks/3/path = NodePath("AudioStreamPlayer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 33 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[node name="Intro" type="Node"]
+script = ExtResource( 26 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 980.483, 439.271 )
+scale = Vector2( 2.6637, 2.5948 )
+texture = ExtResource( 28 )
+
+[node name="images" type="Node2D" parent="."]
+position = Vector2( 0, -1 )
+
+[node name="Image1" type="Node2D" parent="images"]
+position = Vector2( -1.46918, 22.7852 )
+script = ExtResource( 30 )
+
+[node name="main" type="Sprite" parent="images/Image1"]
+texture = ExtResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="images/Image1/main"]
+visible = false
+position = Vector2( 0, -68.9535 )
+scale = Vector2( 1, 1.22279 )
+frames = SubResource( 3 )
+
+[node name="dialog1" type="Sprite" parent="images/Image1"]
+visible = false
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 5.03967, -211.667 )
+texture = ExtResource( 37 )
+
+[node name="dialog2" type="Sprite" parent="images/Image1"]
+visible = false
+position = Vector2( 133.552, 231.825 )
+texture = ExtResource( 38 )
+
+[node name="snow" type="ViewportContainer" parent="images/Image1"]
+margin_left = -299.825
+margin_top = -299.0
+margin_right = 302.175
+margin_bottom = 295.0
+stretch = true
+
+[node name="Viewport" type="Viewport" parent="images/Image1/snow"]
+size = Vector2( 602, 594 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="snow" parent="images/Image1/snow/Viewport" instance=ExtResource( 53 )]
+speed_scale = 0.0
+pause = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="images/Image1"]
+anims/init = SubResource( 4 )
+anims/play = SubResource( 5 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="images/Image1"]
+stream = ExtResource( 29 )
+volume_db = -11.673
+pitch_scale = 0.44
+
+[node name="Image2" type="Node2D" parent="images"]
+position = Vector2( 576, 21.5111 )
+script = ExtResource( 27 )
+
+[node name="main" type="Sprite" parent="images/Image2"]
+texture = ExtResource( 11 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="images/Image2/main"]
+visible = false
+frames = SubResource( 8 )
+frame = 1
+playing = true
+
+[node name="sign" type="Sprite" parent="images/Image2"]
+visible = false
+position = Vector2( 203.877, -92.4997 )
+texture = ExtResource( 23 )
+
+[node name="dialog" type="Sprite" parent="images/Image2"]
+visible = false
+position = Vector2( 133.321, 101.528 )
+texture = ExtResource( 39 )
+
+[node name="snow" type="ViewportContainer" parent="images/Image2"]
+margin_left = -243.0
+margin_top = -144.0
+margin_right = 243.0
+margin_bottom = 145.0
+stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="images/Image2/snow"]
+size = Vector2( 486, 289 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="snow" type="CPUParticles2D" parent="images/Image2/snow/Viewport"]
+position = Vector2( 305, 0 )
+amount = 100
+lifetime = 4.0
+preprocess = 20.0
+speed_scale = 0.2
+texture = ExtResource( 3 )
+emission_shape = 2
+emission_rect_extents = Vector2( 302.5, 307.5 )
+initial_velocity = 10.0
+orbit_velocity_random = 0.28
+scale_amount = 2.0
+scale_amount_random = 1.0
+script = ExtResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="images/Image2"]
+anims/init = SubResource( 9 )
+anims/play = SubResource( 10 )
+anims/shake = SubResource( 11 )
+
+[node name="Image3" type="Node2D" parent="images"]
+position = Vector2( 576, 21.5111 )
+script = ExtResource( 27 )
+
+[node name="main" type="Sprite" parent="images/Image3"]
+texture = ExtResource( 21 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="images/Image3/main"]
+frames = SubResource( 14 )
+playing = true
+
+[node name="sign1" type="Sprite" parent="images/Image3"]
+position = Vector2( 206.122, -92.7408 )
+texture = ExtResource( 24 )
+
+[node name="sign2" type="Sprite" parent="images/Image3"]
+position = Vector2( -202.454, 91.343 )
+texture = ExtResource( 24 )
+
+[node name="dialog" type="Sprite" parent="images/Image3"]
+position = Vector2( 123.861, 108.294 )
+texture = ExtResource( 40 )
+
+[node name="snow" type="ViewportContainer" parent="images/Image3"]
+margin_left = -244.0
+margin_top = -150.0
+margin_right = 243.0
+margin_bottom = 147.0
+stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="images/Image3/snow"]
+size = Vector2( 487, 297 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="snow" type="CPUParticles2D" parent="images/Image3/snow/Viewport"]
+position = Vector2( 305, 0 )
+amount = 100
+lifetime = 4.0
+preprocess = 20.0
+speed_scale = 0.2
+texture = SubResource( 15 )
+emission_shape = 2
+emission_rect_extents = Vector2( 302.5, 307.5 )
+initial_velocity = 10.0
+orbit_velocity_random = 0.28
+scale_amount = 2.0
+scale_amount_random = 1.0
+script = SubResource( 16 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="images/Image3"]
+anims/init = SubResource( 17 )
+anims/play = SubResource( 18 )
+
+[node name="Image4" type="Node2D" parent="images"]
+position = Vector2( 1193.52, 18.3758 )
+script = ExtResource( 27 )
+shake_duration = 7.0
+shake_frequency = 10.0
+shake_amplitude = 10.0
+
+[node name="main" type="Sprite" parent="images/Image4"]
+texture = ExtResource( 9 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="images/Image4/main"]
+frames = SubResource( 21 )
+frame = 1
+playing = true
+
+[node name="dialog1" type="Sprite" parent="images/Image4"]
+position = Vector2( -171.633, -116.541 )
+texture = ExtResource( 41 )
+
+[node name="dialog2" type="Sprite" parent="images/Image4"]
+visible = false
+position = Vector2( -188.584, 84.757 )
+texture = ExtResource( 42 )
+
+[node name="dialog3" type="Sprite" parent="images/Image4"]
+visible = false
+position = Vector2( 80.0314, -216.876 )
+rotation = 0.0872665
+scale = Vector2( 0.422628, 0.486532 )
+texture = ExtResource( 38 )
+
+[node name="snow" type="ViewportContainer" parent="images/Image4"]
+margin_left = -335.0
+margin_top = -299.0
+margin_right = 336.0
+margin_bottom = 298.0
+stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="images/Image4/snow"]
+size = Vector2( 671, 597 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="snow" type="CPUParticles2D" parent="images/Image4/snow/Viewport"]
+position = Vector2( 305, 0 )
+amount = 100
+lifetime = 4.0
+preprocess = 20.0
+speed_scale = 0.2
+texture = ExtResource( 3 )
+emission_shape = 2
+emission_rect_extents = Vector2( 400, 307.5 )
+initial_velocity = 10.0
+orbit_velocity_random = 0.28
+scale_amount = 2.0
+scale_amount_random = 1.0
+script = ExtResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="images/Image4"]
+anims/init = SubResource( 22 )
+anims/play = SubResource( 23 )
+
+[node name="Image5" type="Node2D" parent="images"]
+position = Vector2( 1947.18, 18.3271 )
+script = ExtResource( 27 )
+shake_duration = 3.0
+shake_frequency = 8.0
+shake_amplitude = 8.0
+
+[node name="main" type="Sprite" parent="images/Image5"]
+texture = ExtResource( 6 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="images/Image5/main"]
+
+[node name="dialog" type="Sprite" parent="images/Image5"]
+visible = false
+position = Vector2( -5.99316, 80.9086 )
+texture = ExtResource( 44 )
+
+[node name="dialog2" type="Sprite" parent="images/Image5"]
+visible = false
+position = Vector2( 218.753, 230.739 )
+texture = ExtResource( 43 )
+
+[node name="snow" type="ViewportContainer" parent="images/Image5"]
+margin_left = -377.0
+margin_top = -301.828
+margin_right = 378.0
+margin_bottom = 296.172
+stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="images/Image5/snow"]
+size = Vector2( 755, 598 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="snow" type="CPUParticles2D" parent="images/Image5/snow/Viewport"]
+position = Vector2( 305, 0 )
+amount = 100
+lifetime = 4.0
+preprocess = 20.0
+speed_scale = 0.2
+texture = ExtResource( 3 )
+emission_shape = 2
+emission_rect_extents = Vector2( 400, 307.5 )
+initial_velocity = 10.0
+orbit_velocity_random = 0.28
+scale_amount = 2.0
+scale_amount_random = 1.0
+script = ExtResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="images/Image5"]
+anims/init = SubResource( 24 )
+anims/play = SubResource( 25 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="images/Image5"]
+stream = ExtResource( 31 )
+volume_db = -7.429
+pitch_scale = 0.72
+
+[node name="Image6" type="Node2D" parent="images"]
+position = Vector2( -1.46918, 783.817 )
+script = ExtResource( 27 )
+
+[node name="main" type="Sprite" parent="images/Image6"]
+texture = ExtResource( 5 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="images/Image6/main"]
+frames = SubResource( 28 )
+frame = 1
+playing = true
+
+[node name="dialog" type="Sprite" parent="images/Image6"]
+visible = false
+position = Vector2( -206.922, -237.841 )
+texture = ExtResource( 46 )
+
+[node name="dialog2" type="Sprite" parent="images/Image6"]
+visible = false
+position = Vector2( 204.544, -109.407 )
+texture = ExtResource( 46 )
+
+[node name="dialog3" type="Sprite" parent="images/Image6"]
+visible = false
+position = Vector2( -109.407, 328.221 )
+texture = ExtResource( 46 )
+
+[node name="dialog4" type="Sprite" parent="images/Image6"]
+position = Vector2( -30.9193, 173.624 )
+texture = ExtResource( 45 )
+
+[node name="snow" type="ViewportContainer" parent="images/Image6"]
+margin_left = -287.828
+margin_top = -405.04
+margin_right = 300.172
+margin_bottom = 392.96
+stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="images/Image6/snow"]
+size = Vector2( 588, 798 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="snow" type="CPUParticles2D" parent="images/Image6/snow/Viewport"]
+position = Vector2( 305, 0 )
+amount = 100
+lifetime = 4.0
+preprocess = 20.0
+speed_scale = 0.2
+texture = ExtResource( 3 )
+emission_shape = 2
+emission_rect_extents = Vector2( 400, 307.5 )
+initial_velocity = 10.0
+orbit_velocity_random = 0.28
+scale_amount = 2.0
+scale_amount_random = 1.0
+script = ExtResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="images/Image6"]
+anims/init = SubResource( 29 )
+anims/play = SubResource( 30 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="images/Image6"]
+stream = ExtResource( 32 )
+volume_db = 5.0
+
+[node name="Image7" type="Node2D" parent="images"]
+position = Vector2( 637.969, 783.817 )
+script = ExtResource( 27 )
+shake_duration = 7.0
+shake_frequency = 10.0
+shake_amplitude = 10.0
+
+[node name="main" type="Sprite" parent="images/Image7"]
+texture = ExtResource( 12 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="images/Image7/main"]
+visible = false
+frames = SubResource( 33 )
+frame = 1
+playing = true
+
+[node name="sign" type="Sprite" parent="images/Image7"]
+visible = false
+position = Vector2( -191.424, -162.854 )
+texture = ExtResource( 24 )
+
+[node name="dialog" type="Sprite" parent="images/Image7"]
+visible = false
+position = Vector2( 136.797, -129.556 )
+texture = ExtResource( 47 )
+
+[node name="snow" type="ViewportContainer" parent="images/Image7"]
+margin_left = -294.003
+margin_top = -400.0
+margin_right = 296.997
+margin_bottom = 399.0
+stretch = true
+
+[node name="Viewport" type="Viewport" parent="images/Image7/snow"]
+size = Vector2( 591, 799 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="snow" type="CPUParticles2D" parent="images/Image7/snow/Viewport"]
+position = Vector2( 305, 0 )
+amount = 100
+lifetime = 4.0
+preprocess = 20.0
+speed_scale = 0.2
+texture = ExtResource( 3 )
+emission_shape = 2
+emission_rect_extents = Vector2( 400, 307.5 )
+initial_velocity = 10.0
+orbit_velocity_random = 0.28
+scale_amount = 2.0
+scale_amount_random = 1.0
+script = ExtResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="images/Image7"]
+anims/init = SubResource( 34 )
+anims/play = SubResource( 35 )
+
+[node name="Image8" type="Node2D" parent="images"]
+position = Vector2( 1246, 646 )
+script = ExtResource( 27 )
+
+[node name="main" type="Sprite" parent="images/Image8"]
+texture = ExtResource( 20 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="images/Image8/main"]
+frames = SubResource( 38 )
+playing = true
+
+[node name="dialog1" type="Sprite" parent="images/Image8"]
+visible = false
+position = Vector2( -3.1748, 71.433 )
+texture = ExtResource( 48 )
+
+[node name="dialog2" type="Sprite" parent="images/Image8"]
+visible = false
+position = Vector2( 154.395, -55.8122 )
+rotation = 0.10472
+scale = Vector2( 0.365476, 0.374101 )
+texture = ExtResource( 38 )
+
+[node name="snow" type="ViewportContainer" parent="images/Image8"]
+margin_left = -274.0
+margin_top = -110.0
+margin_right = 273.0
+margin_bottom = 108.0
+stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="images/Image8/snow"]
+size = Vector2( 547, 218 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="snow" type="CPUParticles2D" parent="images/Image8/snow/Viewport"]
+position = Vector2( 305, 0 )
+amount = 100
+lifetime = 4.0
+preprocess = 20.0
+speed_scale = 0.2
+texture = ExtResource( 3 )
+emission_shape = 2
+emission_rect_extents = Vector2( 400, 307.5 )
+initial_velocity = 10.0
+orbit_velocity_random = 0.28
+scale_amount = 2.0
+scale_amount_random = 1.0
+script = ExtResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="images/Image8"]
+anims/init = SubResource( 39 )
+anims/play = SubResource( 40 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="images/Image8"]
+stream = ExtResource( 33 )
+volume_db = 10.0
+
+[node name="Image9" type="Node2D" parent="images"]
+position = Vector2( 1248, 920 )
+script = ExtResource( 27 )
+
+[node name="main" type="Sprite" parent="images/Image9"]
+texture = ExtResource( 17 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="images/Image9/main"]
+frames = SubResource( 43 )
+playing = true
+
+[node name="dialog1" type="Sprite" parent="images/Image9"]
+visible = false
+position = Vector2( -125.405, 90.4818 )
+texture = ExtResource( 48 )
+
+[node name="dialog2" type="Sprite" parent="images/Image9"]
+visible = false
+position = Vector2( 205.148, 92.0709 )
+rotation = -0.174533
+scale = Vector2( 0.333624, 0.386626 )
+texture = ExtResource( 38 )
+
+[node name="dialog3" type="Sprite" parent="images/Image9"]
+visible = false
+position = Vector2( 185.214, -69.8493 )
+rotation = 0.10472
+scale = Vector2( 0.299931, 0.35317 )
+texture = ExtResource( 38 )
+
+[node name="snow" type="ViewportContainer" parent="images/Image9"]
+margin_left = -272.0
+margin_top = -128.822
+margin_right = 273.0
+margin_bottom = 134.178
+stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="images/Image9/snow"]
+size = Vector2( 545, 263 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="snow" type="CPUParticles2D" parent="images/Image9/snow/Viewport"]
+position = Vector2( 305, 0 )
+amount = 100
+lifetime = 4.0
+preprocess = 20.0
+speed_scale = 0.2
+texture = ExtResource( 3 )
+emission_shape = 2
+emission_rect_extents = Vector2( 400, 307.5 )
+initial_velocity = 10.0
+orbit_velocity_random = 0.28
+scale_amount = 2.0
+scale_amount_random = 1.0
+script = ExtResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="images/Image9"]
+anims/init = SubResource( 44 )
+anims/play = SubResource( 45 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="images/Image9"]
+stream = ExtResource( 34 )
+volume_db = 10.0
+
+[node name="Image11" type="Node2D" parent="images"]
+position = Vector2( 1944, 776 )
+script = ExtResource( 27 )
+
+[node name="main" type="Sprite" parent="images/Image11"]
+texture = ExtResource( 10 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="images/Image11/main"]
+frames = SubResource( 48 )
+playing = true
+
+[node name="Tween" type="Tween" parent="images/Image11/main"]
+
+[node name="Tween2" type="Tween" parent="images/Image11/main"]
+
+[node name="snow" type="ViewportContainer" parent="images/Image11"]
+margin_left = -368.417
+margin_top = -366.153
+margin_right = 385.583
+margin_bottom = 433.847
+mouse_filter = 2
+stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="images/Image11/snow"]
+size = Vector2( 754, 800 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="snow" type="CPUParticles2D" parent="images/Image11/snow/Viewport"]
+position = Vector2( 305, 0 )
+amount = 100
+lifetime = 4.0
+preprocess = 20.0
+speed_scale = 0.2
+texture = ExtResource( 3 )
+emission_shape = 2
+emission_rect_extents = Vector2( 400, 307.5 )
+initial_velocity = 10.0
+orbit_velocity_random = 0.28
+scale_amount = 2.0
+scale_amount_random = 1.0
+script = ExtResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="images/Image11"]
+anims/init = SubResource( 49 )
+anims/play = SubResource( 50 )
+
+[node name="dialog1" type="Sprite" parent="images/Image11"]
+visible = false
+modulate = Color( 1, 1, 1, 0.103093 )
+position = Vector2( -82.6382, 326.315 )
+texture = ExtResource( 49 )
+
+[node name="dialog2" type="Sprite" parent="images/Image11"]
+visible = false
+position = Vector2( 77.1347, -365.467 )
+rotation = 0.10472
+scale = Vector2( 0.442106, 0.411259 )
+texture = ExtResource( 38 )
+
+[node name="dialog3" type="Sprite" parent="images/Image11"]
+visible = false
+position = Vector2( 305.205, -297.758 )
+rotation = 0.10472
+scale = Vector2( 0.442106, 0.411259 )
+texture = ExtResource( 38 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( -8.23792, 24 )
+rotation = -0.0279253
+current = true
+zoom = Vector2( 1.4, 1.4 )
+script = ExtResource( 36 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="mountain" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 35 )
+volume_db = -6.367
+pitch_scale = 0.11
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Back" type="TextureButton" parent="CanvasLayer"]
+visible = false
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 152.0
+margin_top = -123.0
+margin_right = 301.0
+rect_scale = Vector2( -1, 1 )
+texture_normal = ExtResource( 54 )
+texture_pressed = ExtResource( 55 )
+expand = true
+
+[node name="Next" type="TextureButton" parent="CanvasLayer"]
+visible = false
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -146.0
+margin_top = -123.0
+rect_pivot_offset = Vector2( -89, -160 )
+texture_normal = ExtResource( 54 )
+texture_pressed = ExtResource( 55 )
+expand = true
+
+[node name="NextTimeout" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="Image10" type="Node2D" parent="NextTimeout"]
+visible = false
+position = Vector2( 1256, 1063 )
+script = ExtResource( 27 )
+
+[node name="main" type="Sprite" parent="NextTimeout/Image10"]
+texture = ExtResource( 18 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="NextTimeout/Image10/main"]
+frames = SubResource( 53 )
+frame = 1
+playing = true
+
+[node name="dialog" type="Sprite" parent="NextTimeout/Image10"]
+visible = false
+position = Vector2( -210.252, 90.8717 )
+texture = ExtResource( 50 )
+
+[node name="snow" type="ViewportContainer" parent="NextTimeout/Image10"]
+margin_left = -272.0
+margin_top = -141.0
+margin_right = 274.0
+margin_bottom = 143.0
+stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="NextTimeout/Image10/snow"]
+size = Vector2( 546, 284 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 0
+
+[node name="snow" type="CPUParticles2D" parent="NextTimeout/Image10/snow/Viewport"]
+position = Vector2( 305, 0 )
+amount = 100
+lifetime = 4.0
+preprocess = 20.0
+speed_scale = 0.2
+texture = ExtResource( 3 )
+emission_shape = 2
+emission_rect_extents = Vector2( 400, 307.5 )
+initial_velocity = 10.0
+orbit_velocity_random = 0.28
+scale_amount = 2.0
+scale_amount_random = 1.0
+script = ExtResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="NextTimeout/Image10"]
+anims/init = SubResource( 54 )
+anims/play = SubResource( 55 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="NextTimeout/Image10"]
+stream = ExtResource( 33 )
+volume_db = 10.0
+
+[connection signal="shake" from="images/Image1" to="Camera2D" method="shake"]
+[connection signal="shake" from="images/Image4" to="Camera2D" method="shake"]
+[connection signal="shake" from="images/Image5" to="Camera2D" method="shake"]
+[connection signal="shake" from="images/Image7" to="Camera2D" method="shake"]
+[connection signal="pressed" from="CanvasLayer/Back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="CanvasLayer/Next" to="." method="_on_Next_pressed"]
+[connection signal="timeout" from="NextTimeout" to="." method="_on_NextTimeout_timeout"]

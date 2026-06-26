@@ -1,0 +1,88 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://themes/fonts/century_gothic_bolt_18.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scenes/Instruction1.gd" type="Script" id=2]
+[ext_resource path="res://assets/images/inicio_fondo_1.png" type="Texture" id=3]
+[ext_resource path="res://assets/images/iu/inicio_fondo_2.png" type="Texture" id=4]
+[ext_resource path="res://tool/NextButton.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/questions/Questions.tscn" type="PackedScene" id=6]
+
+[sub_resource type="Theme" id=1]
+default_font = ExtResource( 1 )
+
+[node name="Instruction2" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = SubResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+menu_name = 7
+next = ExtResource( 6 )
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 3 )
+expand = true
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -506.0
+margin_top = -313.0
+margin_right = 506.0
+margin_bottom = 313.0
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -506.0
+margin_top = -313.0
+margin_right = 506.0
+margin_bottom = 313.0
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 60.0
+margin_top = 56.0
+margin_right = -71.0
+margin_bottom = -28.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/selection_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "LA RUEDA MÁGICA
+Te proponemos responder las preguntas que se presentan a continuación, las cuales te situarán en diferentes escenarios hipotéticos, dentro de una organización. 
+Encontrarás distintas opciones para responder a los planteos, entre las cuales deberás elegir, frente a cada situación, aquella con la que te identifiques en mayor medida. Deberás elegir solo UNA opción ante cada planteo. No podrás dejar preguntas sin responder."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" parent="TextureRect" instance=ExtResource( 5 )]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -39.5
+margin_top = -95.0
+margin_right = 39.5
+margin_bottom = -16.0
+
+[connection signal="pressed" from="TextureRect/TextureButton" to="." method="_on_TextureButton_pressed"]

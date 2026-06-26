@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/rock_breaking.ogg-dc1f14cf2ada80e8a34a52d48d9dd409.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/rock_breaking.ogg"
+dest_files=[ "res://.import/rock_breaking.ogg-dc1f14cf2ada80e8a34a52d48d9dd409.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

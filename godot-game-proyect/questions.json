@@ -1,0 +1,147 @@
+{
+    "liderazgo":[
+        {
+            "question":"Tenés que seleccionar una persona para tu equipo de trabajo y, al momento de las entrevistas te encontrás con diferentes perfiles. ¿Cuál elegirías?",
+            "answers":[
+                "A) Aquel que, por lo que te cuenta, presumís piensa muy parecido a vos entonces seguramente no cuestione tus decisiones haciendo que sea más simple ejecutarlas.",
+                "B) Aquel que, por lo que te cuenta, tiene una mirada diferente a la tuya entonces crees que se complementarían muy bien potenciando al equipo.",
+                "C) Dependiendo del momento y la madurez en la que se encuentren el equipo y la organización elegirías por uno o por otro."
+            ],
+            "current_selected":-1,
+            "points":[10,30,30]
+        },
+        {
+            "question":"El gerente general de la compañía te convocó a una reunión muy importante donde dio a conocer la estrategia del negocio para los próximos 5 años. Tenés que ahora compartir esa información con los colaboradores de tu equipo. ¿Cómo lo harías?",
+            "answers":[
+                "A) Les envías un mail con la información",
+                "B) Los convocás a una reunión y lo comunicás personalmente",
+                "C) No comunicás nada y esperás que se enteren solos, el radiopasillo siempre es más rápido"
+            ],
+            "current_selected":-1,
+            "points":[10,30,0]
+        },
+        {
+            "question":"Un reporte habla con vos y te cuenta que tuvo un problema con un compañero/a de equipo que también reporta a vos pero que no ha hablado con esa persona sino que recurre a vos para que lo soluciones. ¿Cómo reaccionarías?",
+            "answers":[
+                "A) Convocás a la otra persona involucrada y tenés una reunión con ambos para aclarar el tema",
+                "B) Le sugerís a tu reporte que primero hable con su compañero/a de equipo",
+                "C) Convocás a la otra persona involucrada en el conflicto a una reunión con vos y lo culpás por lo que ha ocurrido"
+            ],
+            "current_selected":-1,
+            "points":[20,30,0]
+        },    {
+            "question":"Tu jefe directo te pide que revises la estrategia actual del área y hagas una nueva propuesta ya que entiende que no se están alcanzando los objetivos con el plan actual. Si bien necesita que se la presentes en un corto plazo te pide que te tomes el tiempo que creas necesario para diseñarla. ¿Qué harías para presentar la nueva estrategia?",
+            "answers":[
+                "A) Le transferís el pedido al jefe especialista en el tema para que idee una nueva estrategia con su equipo y te la presente",
+                "B) Convocás al jefe especialista en el tema, para idear en conjunto la nueva estrategia",
+                "C) Te quedás hasta después de hora solo pensando la nueva estrategia para presentarla al día siguiente a tu jefe"
+            ],
+            "current_selected":-1,
+            "points":[20,30,10]
+        },
+        {
+            "question":"Te pidieron revisar los resultados del equipo que ha trabajado el último año en una dinámica mixta entre home office y presencial para implementar mejoras que impacten positivamente en la performance del equipo, ¿qué harías?",
+            "answers":[
+                "A) Relevarías con cada integrante del equipo los impactos de la nueva modalidad para levantar propuestas de mejora",
+                "B) Armarías la propuesta en función del desempeño que tuvo cada uno ",
+                "C) Responderías que es un tema que debe relevar y del cual debe ocuparse Recursos Humanos "
+            ],
+            "current_selected":-1,
+            "points":[20,10,0]
+        },
+        {
+            "question":"Hace menos de 1 año que estás en tu posición actual y te ofrecen cambiar a otra posición de mayor seniority en un área en la que nunca trabajaste y en la que no tenés experiencia. ¿Qué hacés?",
+            "answers":[
+                "A) Aceptás la propuesta, si pensaron en vos es porque creen que estás a la altura de lo que la posición requiere y además es una gran oportunidad para ganar experiencia en una nueva área",
+                "B) Rechazás la propuesta. Preferís seguir creciendo en tu área de expertise más allá de que el cambio implique un crecimiento jerárquico",
+                "C) Rechazás la propuesta por el momento ya que hace muy poco tiempo que estás en tu puesto actual. Pedís que te tengan en cuenta más adelante"
+            ],
+            "current_selected":-1,
+            "points":[30,10,20]
+        },
+        {
+            "question":"Hace un año ingresó un joven profesional a tu equipo y te consulta sobre la posibilidad de tomarse 6 meses de licencia para ir a hacer una especialización de su carrera al exterior. ¿Qué le respondés?:",
+            "answers":[
+                "A) Te parece una gran idea, valorás sus ganas de formarse, y tratarás de hacer todo lo que esté a tu alcance para conseguirle la licencia.",
+                "B) Te parece inviable y le decís que no.",
+                "C) Aceptás la idea siempre que pueda, aunque sea, trabajar algunas horas part time a distancia."
+            ],
+            "current_selected":-1,
+            "points":[30,0,20]
+        }
+        
+        
+    ],
+    "individual":[
+        {
+            "question":"Ingresaste a un nuevo sector y tenés la posibilidad de elegir entre sus compañeros quién te guiará para realizar el entrenamiento en el nuevo puesto de trabajo. ¿A quién elegirías?",
+            "answers":[
+                "A) A quien, por lo que te cuenta, presumís piensa muy parecido a vos entonces seguramente estarán de acuerdo frente a las situaciones a resolver.",
+                "B) A quien, por lo que te cuenta, tiene una mirada diferente a la tuya entonces crees que se complementarían muy bien.",
+                "C) Dependiendo del momento y la madurez en la que se encuentren el equipo y la organización elegiría por uno o por otro."
+            ],
+            "current_selected":-1,
+            "points":[10,30,30]
+        },
+        {
+            "question":"Cuando tu jefe/a te propone encarar el proceso de revisión de desempeño",
+            "answers":[
+                "A) Frecuentemente tenés listadas aquellas cuestiones que te proponés mejorar respecto a tu desempeño/gestión.",
+                "B) Tenés dificultad para identificar tus fortalezas y oportunidades de mejora en el rol.",
+                "C) Ya tenés identificadas acciones para potenciar tus fortalezas y desarrollas otras habilidades."
+            ],
+            "current_selected":-1,
+            "points":[20,10,30]
+        },
+        {
+            "question":"Tuviste un problema con un compañero de equipo con quien aún no has hablado y tenés que resolver la situación. ¿Cómo la resolverías?",
+            "answers":[
+                "A) Involucrás a tu jefe para ponerlo al tanto del tema y así colabore en la resolución.",
+                "B) Convocás a otro compañero para que te de su opinión sobre cómo encarar el diálogo.",
+                "C) Planificás el mensaje que querés transmitir y hablás directamente con quien tuviste el problema."
+            ],
+            "current_selected":-1,
+            "points":[20,20,30]
+        },
+        {
+            "question":"Tu jefe directo te pidió que prepares una propuesta para mejorar un proceso de su área. Si bien necesita que se la presentes en un corto plazo te pide que te tomes el tiempo que creas necesario para armarla. ¿Qué estrategia usarías para elaborar la nueva propuesta?",
+            "answers":[
+                "A) Le pedís a un compañero del sector que te ayude.",
+                "B) Apelás a tus conocimientos e ideas y lo armás solo/a.",
+                "C) Te tomás algunos días para compartir tus ideas con especialistas en el tema antes de presentar la propuesta."
+            ],
+            "current_selected":-1,
+            "points":[20,0,30]
+        },
+        {
+            "question":"La compañía donde trabajás va a implementar un nuevo sistema de trabajo en la oficina basado en el free seating, donde ya no tendrás un puesto fijo y podés elegir donde sentarte cada día. ¿Qué pensás respecto a esta definición?",
+            "answers":[
+                "A) Que es inviable: por el tipo de información y conversaciones que tenés necesitás indefectiblemente compartir el día a día con las personas de tu sector. ",
+                "B) Desconfiás de las ventajas de esta propuesta; sentís que se ve afectado tu sentido de pertenencia por no contar con un puesto de trabajo propio. ",
+                "C) Sabés que va a ser un cambio que te va a costar y te requerirá re plantearte algunos hábitos pero confiás en que si se tomó esta decisión es porque es la mejor."
+            ],
+            "current_selected":-1,
+            "points":[0,10,30]
+        },
+        {
+            "question":"Hace menos de 1 año que estás en tu posición actual y te ofrecen cambiar a otra posición de mayor seniority en un área en la que nunca trabajaste y en la que no tenés experiencia. ¿Qué hacés?",
+            "answers":[
+                "A) Aceptás la propuesta, si pensaron en vos es porque creen que estás a la altura de lo que la posición requiere y además es una gran oportunidad para ganar experiencia en una nueva área.",
+                "B) Rechazás la propuesta. Preferós seguir creciendo en tu área de expertise más allá de que el cambio implique un crecimiento jerárquico.",
+                "C) Rechazás la propuesta por el momento ya que hace muy poco tiempo que estás en tu puesto actual. Pedís que te tengan en cuenta más adelante."
+            ],
+            "current_selected":-1,
+            "points":[30,10,20]
+        },
+        {
+            "question":"Ingresaste hace 6 meses a un nuevo equipo y tenés la posibilidad de realizar una especialización de tu carrera en el exterior. ¿Cómo actuarías?",
+            "answers":[
+                "A) Te parece una gran oportunidad, considerás que la empresa valorará tus ganas de formarte y tratará de hacer todo lo que esté a su alcance para conseguirte una licencia mientras dure la especialización.",
+                "B) Te parece inviable y no lo planteás.",
+                "C) Antes de pedir la licencia armás un esquema para plantear la posibilidad de seguir colaborando a distancia mientras estás cursando afuera."
+            ],
+            "current_selected":-1,
+            "points":[30,0,10]
+        }
+    ]
+}

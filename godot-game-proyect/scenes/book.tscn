@@ -1,0 +1,104 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://assets/images/book/libro_5.png" type="Texture" id=1]
+[ext_resource path="res://assets/images/book/libro_6.png" type="Texture" id=2]
+[ext_resource path="res://assets/images/book/libro_3.png" type="Texture" id=3]
+[ext_resource path="res://assets/images/book/libro_1.png" type="Texture" id=4]
+[ext_resource path="res://assets/images/book/libro_4.png" type="Texture" id=5]
+[ext_resource path="res://assets/images/book/libro_2.png" type="Texture" id=6]
+[ext_resource path="res://scenes/book.gd" type="Script" id=7]
+[ext_resource path="res://assets/images/iu/Icono_1a.png" type="Texture" id=8]
+[ext_resource path="res://assets/images/iu/Icono_1b.png" type="Texture" id=9]
+[ext_resource path="res://themes/fonts/book.tres" type="DynamicFont" id=10]
+
+[sub_resource type="Animation" id=1]
+resource_name = "open"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 4 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 1 ), ExtResource( 2 ) ]
+}
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="DynamicFontData" id=5]
+font_path = "res://themes/font/century-gothic/GOTHIC.TTF"
+
+[sub_resource type="DynamicFont" id=6]
+size = 15
+use_filter = true
+font_data = SubResource( 5 )
+
+[node name="book" type="Sprite"]
+texture = ExtResource( 4 )
+script = ExtResource( 7 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/open = SubResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+visible = false
+margin_left = -360.0
+margin_top = -150.0
+margin_right = -11.0
+margin_bottom = -37.0
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="back" type="TextureButton" parent="Label"]
+margin_left = 338.498
+margin_top = 280.515
+margin_right = 411.498
+margin_bottom = 347.515
+rect_scale = Vector2( -1, 1 )
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 8 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LineEdit" type="LineEdit" parent="."]
+margin_left = 96.0
+margin_top = -104.0
+margin_right = 299.0
+margin_bottom = -81.0
+custom_styles/read_only = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 6 )
+align = 1
+placeholder_text = "Ingresa tu DNI"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="enter" type="TextureButton" parent="LineEdit"]
+margin_left = 194.0
+margin_top = 207.0
+margin_right = 252.0
+margin_bottom = 261.0
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 8 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Label/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="LineEdit/enter" to="." method="_on_enter_pressed"]

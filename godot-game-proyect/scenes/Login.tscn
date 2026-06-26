@@ -1,0 +1,180 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://assets/images/iu/inicio_fondo_2.png" type="Texture" id=1]
+[ext_resource path="res://assets/images/inicio_fondo_1.png" type="Texture" id=2]
+[ext_resource path="res://assets/images/iu/inicio_fondo_3.png" type="Texture" id=3]
+[ext_resource path="res://tool/NextButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/Login.gd" type="Script" id=5]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://themes/font/century-gothic/GOTHIC.TTF"
+
+[sub_resource type="DynamicFont" id=2]
+outline_size = 1
+outline_color = Color( 0.501961, 0.501961, 0.501961, 1 )
+use_filter = true
+font_data = SubResource( 1 )
+
+[sub_resource type="Theme" id=3]
+default_font = SubResource( 2 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 35
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = SubResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[node name="Login" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -1.0
+margin_bottom = -1.0
+theme = SubResource( 3 )
+script = ExtResource( 5 )
+
+[node name="background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="banner" type="TextureRect" parent="background"]
+anchor_left = 0.498
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -485.952
+margin_top = -312.0
+margin_right = 484.0
+margin_bottom = 13.0
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="RichTextLabel" parent="background/banner"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 49.0
+margin_top = 32.0
+margin_right = -48.0
+margin_bottom = -13.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "¡TE DAMOS LA BIENVENIDA A LA EXPERIENCIA GAMING TR!
+
+EL OBJETIVO DE ESTE JUEGO, ES APORTARLE AL PROCESO DE SELECCIÓN DEL QUE ESTÁS PARTICIPANDO, MÁS INFORMACIÓN SOBRE TU PERFIL A PARTIR DEL DESEMPEÑO.
+
+TE DESAFIAMOS A PENSAR Y DEDICARLE UNOS MINUTOS A UN JUEGO QUE NOS BRINDARÁ INFORMACIÓN INTERESANTE PERO QUE NO ES DETERMINANTE SOBRE TU CONTINUIDAD EN LA BÚSQUEDA PARA LA QUE TE CONVOCAMOS.
+
+IMPORTANTE
+TE RECOMENDAMOS ESTAR EN UN ENTORNO CON BUENA CONEXIÓN, SIN INTERRUPCIONES Y HACERLO DESDE UNA PC O NOTEBOOK, YA QUE DEBERÁS UTILIZAR EL CURSOR DEL TECLADO"
+text = "¡TE DAMOS LA BIENVENIDA A LA EXPERIENCIA GAMING TR!
+
+EL OBJETIVO DE ESTE JUEGO, ES APORTARLE AL PROCESO DE SELECCIÓN DEL QUE ESTÁS PARTICIPANDO, MÁS INFORMACIÓN SOBRE TU PERFIL A PARTIR DEL DESEMPEÑO.
+
+TE DESAFIAMOS A PENSAR Y DEDICARLE UNOS MINUTOS A UN JUEGO QUE NOS BRINDARÁ INFORMACIÓN INTERESANTE PERO QUE NO ES DETERMINANTE SOBRE TU CONTINUIDAD EN LA BÚSQUEDA PARA LA QUE TE CONVOCAMOS.
+
+IMPORTANTE
+TE RECOMENDAMOS ESTAR EN UN ENTORNO CON BUENA CONEXIÓN, SIN INTERRUPCIONES Y HACERLO DESDE UNA PC O NOTEBOOK, YA QUE DEBERÁS UTILIZAR EL CURSOR DEL TECLADO"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="background"]
+margin_left = 88.0
+margin_top = 275.0
+margin_right = 922.0
+margin_bottom = 507.0
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="background"]
+margin_left = 88.0
+margin_top = 275.0
+margin_right = 922.0
+margin_bottom = 507.0
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LineEdit" type="LineEdit" parent="background/TextureRect"]
+margin_left = 61.0
+margin_top = 98.0
+margin_right = 768.0
+margin_bottom = 149.0
+custom_colors/cursor_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 7 )
+custom_styles/read_only = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+align = 1
+placeholder_text = "Ingrese el DNI"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Enter" parent="background/TextureRect" instance=ExtResource( 4 )]
+
+[node name="background2" type="TextureRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="banner" type="TextureRect" parent="background2"]
+anchor_left = 0.498
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -485.952
+margin_top = -312.0
+margin_right = 484.0
+margin_bottom = 13.0
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="RichTextLabel" parent="background2/banner"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 49.0
+margin_top = 32.0
+margin_right = -48.0
+margin_bottom = -13.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Next" parent="background2" instance=ExtResource( 4 )]
+margin_left = 909.635
+margin_top = 496.364
+margin_right = 988.635
+margin_bottom = 575.364
+
+[connection signal="pressed" from="background/TextureRect/Enter" to="." method="_on_Enter_pressed"]
+[connection signal="pressed" from="background2/Next" to="." method="_on_Next_pressed"]

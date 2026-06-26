@@ -1,0 +1,8 @@
+Options +SymLinksIfOwnerMatch
+RewriteEngine On
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [R=301,L]
+
+Redirect 301 /public/game.html https://www.trgaming.com.ar/public/game/
+
+RewriteRule ^ index.php [L]

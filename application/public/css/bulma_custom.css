@@ -1,0 +1,174 @@
+.big-modal {
+    width: 80%;
+}
+
+
+.bar {
+    fill: #aaa;
+    transition: fill 0.3s ease;
+    cursor: pointer;
+    font-size: 1.2em;
+  }
+  
+  .bar:hover,
+  .bar:focus {
+    fill: linear-gradient(90deg, rgba(247,166,203,1) 0%, rgba(246,111,172,1) 42%) !important;
+  }
+  .box-data{
+    background-color: #EB1C74;
+    color: white; 
+    padding: 6px; 
+    border-radius: 6px; 
+    height: 100%; 
+    box-shadow: 0px 0px 10px gray;
+  }
+  .box-data:hover{
+    background-color: white;
+    border-style: solid;
+    border-color: #EB1C74;
+    border-width: 3px;
+    color: #EB1C74; 
+    padding: 3px; 
+    border-radius: 6px; 
+    height: 100%; 
+    box-shadow: 0px 0px 10px gray;
+  }
+  
+  .box-data:hover .box-data-header{
+    transition-property: opacity;
+    opacity: 1;
+    font-size: 3.2rem;
+  }
+  .box-data-header{
+    font-size: 2.2rem;
+    text-align:center;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    padding-right: 12px;
+  }
+  .button-listar{
+    opacity: 0;
+    position: absolute;
+    visibility: hidden;
+  }
+  .box-data-body{ 
+    background-color: gray; 
+    font-size: 3.4rem; 
+    border-radius: 0 6px 6px 0;
+  }
+  .result{
+      color: white;
+  }
+  /* Login */
+  .login-hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #EB1C74 0%, #a01050 100%);
+  }
+  .login-box {
+    background: white;
+    border-radius: 12px;
+    padding: 2.5rem 3rem;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  }
+  .login-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-align: center;
+    color: #363636;
+    margin-bottom: 1.8rem;
+  }
+  .login-btn {
+    background-color: #EB1C74;
+    color: white;
+    font-weight: 600;
+    border: none;
+  }
+  .login-btn:hover {
+    background-color: #c8155f;
+    color: white;
+  }
+
+  /* DataTables controls alignment */
+  .dataTables_wrapper .dataTables_length,
+  .dataTables_wrapper .dataTables_filter {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+  }
+  .dataTables_wrapper .dataTables_length label,
+  .dataTables_wrapper .dataTables_filter label {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin: 0;
+  }
+  .dataTables_wrapper .dataTables_filter {
+    justify-content: flex-end;
+  }
+  .dataTables_wrapper .dataTables_length select,
+  .dataTables_wrapper .dataTables_filter input {
+    height: 2.2rem;
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+    padding: 0 0.5rem;
+    font-size: 0.95rem;
+  }
+
+  /* Spinner */
+  .table-spinner {
+    text-align: center;
+    padding: 2rem;
+  }
+  .spinner {
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 4px solid #f3d0e3;
+    border-top-color: #EB1C74;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+    margin: 0 auto;
+  }
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+
+  #notification_container {
+    z-index: 50;
+  }
+
+  .infoUser{
+    padding: 8px;
+  }
+
+  #tablaUsuarios{
+    display: none;
+  }
+  .rowUser{
+    border-color: black;
+    border-width: 2px 0px 0px 0px;
+    border-style: solid;
+  }
+  
+/* .chart > div{
+    width: 100%;
+    height: 100%;
+}
+.chart > div > div{
+    width: 100%;
+    height: 100%;
+}
+.chart > div > div > div{
+    width: 100%;
+    height: 100%;
+}
+.chart{
+    width: 1200px;
+    height: 600px;
+    margin: 5px;
+} */

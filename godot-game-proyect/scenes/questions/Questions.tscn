@@ -1,0 +1,583 @@
+[gd_scene load_steps=32 format=2]
+
+[ext_resource path="res://themes/font/RobotoSlab-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/images/iu/menu_1.png" type="Texture" id=2]
+[ext_resource path="res://assets/images/iu/otros_1.png" type="Texture" id=3]
+[ext_resource path="res://assets/images/iu/otros_2.png" type="Texture" id=4]
+[ext_resource path="res://assets/images/pared de cabaña_a 1.1.png" type="Texture" id=5]
+[ext_resource path="res://assets/images/Iluminacion.png" type="Texture" id=6]
+[ext_resource path="res://assets/images/iu/Icono_1a.png" type="Texture" id=7]
+[ext_resource path="res://assets/images/iu/boton_1.png" type="Texture" id=8]
+[ext_resource path="res://scenes/questions/Questions.gd" type="Script" id=9]
+[ext_resource path="res://scenes/questions/CheckBox.gd" type="Script" id=10]
+[ext_resource path="res://assets/images/roulette/ruleta_1.png" type="Texture" id=11]
+[ext_resource path="res://assets/images/roulette/puntero de ruleta.png" type="Texture" id=12]
+[ext_resource path="res://assets/images/roulette/ruleta_2.png" type="Texture" id=13]
+[ext_resource path="res://themes/fonts/century_gothic_bolt_18.tres" type="DynamicFont" id=14]
+[ext_resource path="res://assets/audio/roulette.wav" type="AudioStream" id=15]
+[ext_resource path="res://scenes/questions/roulette.gd" type="Script" id=16]
+[ext_resource path="res://assets/audio/click.wav" type="AudioStream" id=17]
+[ext_resource path="res://assets/audio/positive.wav" type="AudioStream" id=18]
+[ext_resource path="res://assets/audio/select.wav" type="AudioStream" id=19]
+[ext_resource path="res://assets/audio/happy.ogg" type="AudioStream" id=20]
+[ext_resource path="res://scenes/questions/Light.gd" type="Script" id=21]
+[ext_resource path="res://assets/images/pared de cabaña_b 1.1.png" type="Texture" id=22]
+[ext_resource path="res://effects/snow.tscn" type="PackedScene" id=23]
+[ext_resource path="res://assets/images/iu/Icono_1b.png" type="Texture" id=24]
+[ext_resource path="res://assets/images/iu/popup_2.png" type="Texture" id=25]
+
+[sub_resource type="Theme" id=1]
+default_font = ExtResource( 14 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "apretar"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("pointer:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("arrow:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 40, 0 ), Vector2( 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("arrow:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "light"
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.2, 1.7, 2.1, 2.7, 3.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.2, 0.6, 0.2, 0.1, 0.4, 0.8 ]
+}
+
+[sub_resource type="DynamicFont" id=4]
+size = 25
+outline_size = 1
+outline_color = Color( 0.929412, 0.929412, 0.929412, 0.54902 )
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=5]
+extra_spacing_top = -2
+extra_spacing_bottom = -2
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=6]
+default_font = SubResource( 5 )
+
+[node name="Questions" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = SubResource( 1 )
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+menu_name = 4
+
+[node name="tree" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 22 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="snow" parent="." instance=ExtResource( 23 )]
+position = Vector2( 257.159, -137.517 )
+
+[node name="bg" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="roulette" type="Node2D" parent="."]
+position = Vector2( 312.773, 185.725 )
+scale = Vector2( 0.4, 0.4 )
+script = ExtResource( 16 )
+
+[node name="images" type="Node2D" parent="roulette"]
+position = Vector2( 538.815, 302.642 )
+
+[node name="color1" type="Sprite" parent="roulette/images"]
+texture = ExtResource( 13 )
+hframes = 7
+
+[node name="color7" type="Sprite" parent="roulette/images"]
+texture = ExtResource( 13 )
+hframes = 7
+frame = 6
+
+[node name="color6" type="Sprite" parent="roulette/images"]
+texture = ExtResource( 13 )
+hframes = 7
+frame = 5
+
+[node name="color5" type="Sprite" parent="roulette/images"]
+texture = ExtResource( 13 )
+hframes = 7
+frame = 4
+
+[node name="color4" type="Sprite" parent="roulette/images"]
+texture = ExtResource( 13 )
+hframes = 7
+frame = 3
+
+[node name="color3" type="Sprite" parent="roulette/images"]
+texture = ExtResource( 13 )
+hframes = 7
+frame = 2
+
+[node name="color2" type="Sprite" parent="roulette/images"]
+texture = ExtResource( 13 )
+hframes = 7
+frame = 1
+
+[node name="base" type="Sprite" parent="roulette/images"]
+texture = ExtResource( 11 )
+
+[node name="pointer" type="Sprite" parent="roulette"]
+position = Vector2( 539.9, -60.8314 )
+texture = ExtResource( 12 )
+
+[node name="Push" type="Button" parent="roulette"]
+margin_left = 426.47
+margin_top = -210.128
+margin_right = 664.47
+margin_bottom = 51.8715
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="roulette"]
+autoplay = "apretar"
+anims/apretar = SubResource( 2 )
+
+[node name="Tween" type="Tween" parent="roulette"]
+
+[node name="rouletteAudio" type="AudioStreamPlayer" parent="roulette"]
+stream = ExtResource( 15 )
+
+[node name="arrow" type="Sprite" parent="roulette"]
+position = Vector2( 286.228, -59.6431 )
+texture = ExtResource( 25 )
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2( 44.5656, 608.838 )
+amount = 20
+emission_shape = 1
+emission_sphere_radius = 128.0
+gravity = Vector2( 50, -98 )
+scale_amount = 3.0
+scale_amount_random = 1.0
+color = Color( 1, 0, 0, 1 )
+hue_variation = 0.19
+hue_variation_random = 0.61
+
+[node name="Light" type="Light2D" parent="."]
+show_behind_parent = true
+position = Vector2( 5.52878, 531.674 )
+texture = ExtResource( 6 )
+texture_scale = 4.0
+energy = 0.536858
+script = ExtResource( 21 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Light"]
+autoplay = "light"
+playback_speed = 0.5
+anims/light = SubResource( 3 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -506.0
+margin_top = -335.0
+margin_right = 533.0
+margin_bottom = 337.0
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainFlag" type="TextureRect" parent="CanvasLayer/TextureRect"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -144.0
+margin_top = 40.0
+margin_right = 144.0
+margin_bottom = 107.0
+texture = ExtResource( 8 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/TextureRect/MainFlag"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -113.5
+margin_top = -35.0
+margin_right = 123.5
+margin_bottom = 25.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Cuestionario"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuestionBanner" type="TextureRect" parent="CanvasLayer/TextureRect"]
+visible = false
+margin_left = 72.0
+margin_top = 103.0
+margin_right = 281.0
+margin_bottom = 155.0
+texture = ExtResource( 8 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/TextureRect/QuestionBanner"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 9.0
+margin_top = -4.0
+margin_right = 9.0
+margin_bottom = -4.0
+custom_fonts/font = ExtResource( 14 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Pregunta"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/TextureRect"]
+margin_left = 106.0
+margin_top = 145.0
+margin_right = 916.0
+margin_bottom = 303.0
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="question" type="Label" parent="CanvasLayer/TextureRect/ScrollContainer"]
+margin_right = 810.0
+margin_bottom = 158.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 14 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+valign = 1
+autowrap = true
+
+[node name="Progress" type="HBoxContainer" parent="CanvasLayer/TextureRect"]
+visible = false
+margin_left = 157.0
+margin_top = 546.0
+margin_right = 451.0
+margin_bottom = 596.0
+custom_constants/separation = -10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="q1" type="TextureRect" parent="CanvasLayer/TextureRect/Progress"]
+margin_right = 50.0
+margin_bottom = 50.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 4 )
+expand = true
+
+[node name="q2" type="TextureRect" parent="CanvasLayer/TextureRect/Progress"]
+margin_left = 40.0
+margin_right = 91.0
+margin_bottom = 50.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 3 )
+expand = true
+
+[node name="q3" type="TextureRect" parent="CanvasLayer/TextureRect/Progress"]
+margin_left = 81.0
+margin_right = 131.0
+margin_bottom = 50.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 3 )
+expand = true
+
+[node name="q4" type="TextureRect" parent="CanvasLayer/TextureRect/Progress"]
+margin_left = 121.0
+margin_right = 172.0
+margin_bottom = 50.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 3 )
+expand = true
+
+[node name="q5" type="TextureRect" parent="CanvasLayer/TextureRect/Progress"]
+margin_left = 162.0
+margin_right = 212.0
+margin_bottom = 50.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 3 )
+expand = true
+
+[node name="q6" type="TextureRect" parent="CanvasLayer/TextureRect/Progress"]
+margin_left = 202.0
+margin_right = 253.0
+margin_bottom = 50.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 3 )
+expand = true
+
+[node name="q7" type="TextureRect" parent="CanvasLayer/TextureRect/Progress"]
+margin_left = 243.0
+margin_right = 294.0
+margin_bottom = 50.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 3 )
+expand = true
+
+[node name="ScrollContainer2" type="ScrollContainer" parent="CanvasLayer/TextureRect"]
+margin_left = 62.0
+margin_top = 334.0
+margin_right = 968.0
+margin_bottom = 538.0
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="answers" type="VBoxContainer" parent="CanvasLayer/TextureRect/ScrollContainer2"]
+margin_right = 24.0
+margin_bottom = 168.0
+theme = SubResource( 6 )
+custom_constants/separation = 45
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBox" type="CheckBox" parent="CanvasLayer/TextureRect/ScrollContainer2/answers"]
+margin_right = 24.0
+margin_bottom = 26.0
+focus_mode = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0.25098, 0.25098, 0.25098, 1 )
+custom_colors/font_color_pressed = Color( 0.12549, 0.12549, 0.12549, 1 )
+enabled_focus_mode = 0
+clip_text = true
+script = ExtResource( 10 )
+
+[node name="Label" type="Label" parent="CanvasLayer/TextureRect/ScrollContainer2/answers/CheckBox"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 61.0
+margin_right = 809.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBox2" type="CheckBox" parent="CanvasLayer/TextureRect/ScrollContainer2/answers"]
+margin_top = 71.0
+margin_right = 24.0
+margin_bottom = 97.0
+focus_mode = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0.25098, 0.25098, 0.25098, 1 )
+custom_colors/font_color_pressed = Color( 0.12549, 0.12549, 0.12549, 1 )
+enabled_focus_mode = 0
+clip_text = true
+script = ExtResource( 10 )
+
+[node name="Label" type="Label" parent="CanvasLayer/TextureRect/ScrollContainer2/answers/CheckBox2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 61.0
+margin_top = 1.0
+margin_right = 818.0
+margin_bottom = 1.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBox3" type="CheckBox" parent="CanvasLayer/TextureRect/ScrollContainer2/answers"]
+margin_top = 142.0
+margin_right = 24.0
+margin_bottom = 168.0
+focus_mode = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0.25098, 0.25098, 0.25098, 1 )
+custom_colors/font_color_pressed = Color( 0.12549, 0.12549, 0.12549, 1 )
+enabled_focus_mode = 0
+clip_text = true
+script = ExtResource( 10 )
+
+[node name="Label" type="Label" parent="CanvasLayer/TextureRect/ScrollContainer2/answers/CheckBox3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 61.0
+margin_top = 2.0
+margin_right = 810.0
+margin_bottom = 2.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/TextureRect"]
+visible = false
+margin_left = 49.6326
+margin_top = 518.122
+margin_right = 570.633
+margin_bottom = 558.122
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Anterior" type="Button" parent="CanvasLayer/TextureRect/HBoxContainer2"]
+margin_right = 72.0
+margin_bottom = 40.0
+disabled = true
+text = "Anterior"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/TextureRect/HBoxContainer2"]
+margin_left = 76.0
+margin_right = 437.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Siguiente" type="Button" parent="CanvasLayer/TextureRect/HBoxContainer2"]
+margin_left = 441.0
+margin_right = 521.0
+margin_bottom = 40.0
+size_flags_horizontal = 9
+text = "Siguiente"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ready" type="Button" parent="CanvasLayer/TextureRect/HBoxContainer2"]
+visible = false
+margin_left = 467.0
+margin_right = 521.0
+margin_bottom = 40.0
+size_flags_horizontal = 9
+text = "Listo"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="answer" type="TextureButton" parent="CanvasLayer/TextureRect"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -42.5
+margin_top = -138.0
+margin_right = 64.5
+margin_bottom = -48.0
+disabled = true
+texture_normal = ExtResource( 24 )
+texture_pressed = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 17 )
+
+[node name="positive" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 18 )
+volume_db = -12.0
+
+[node name="select" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 19 )
+
+[node name="happy" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 20 )
+volume_db = -12.0
+
+[connection signal="pressed" from="roulette/Push" to="." method="_on_Push_pressed"]
+[connection signal="pressed" from="CanvasLayer/TextureRect/ScrollContainer2/answers/CheckBox" to="." method="_on_CheckBox_pressed"]
+[connection signal="pressed" from="CanvasLayer/TextureRect/ScrollContainer2/answers/CheckBox2" to="." method="_on_CheckBox_pressed"]
+[connection signal="pressed" from="CanvasLayer/TextureRect/ScrollContainer2/answers/CheckBox3" to="." method="_on_CheckBox_pressed"]
+[connection signal="pressed" from="CanvasLayer/TextureRect/HBoxContainer2/Anterior" to="." method="_on_Anterior_pressed"]
+[connection signal="pressed" from="CanvasLayer/TextureRect/HBoxContainer2/Siguiente" to="." method="_on_Siguiente_pressed"]
+[connection signal="pressed" from="CanvasLayer/TextureRect/HBoxContainer2/Ready" to="." method="_on_Ready_pressed"]
+[connection signal="pressed" from="CanvasLayer/TextureRect/answer" to="." method="_on_answer_pressed"]

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/intro/snow.gd" type="Script" id=1]
+[ext_resource path="res://assets/images/snow.png" type="Texture" id=2]
+
+[node name="snow" type="CPUParticles2D"]
+position = Vector2( 305, 0 )
+amount = 100
+lifetime = 4.0
+preprocess = 20.0
+speed_scale = 0.2
+texture = ExtResource( 2 )
+emission_shape = 2
+emission_rect_extents = Vector2( 302.5, 307.5 )
+initial_velocity = 10.0
+orbit_velocity_random = 0.28
+scale_amount = 2.0
+scale_amount_random = 1.0
+script = ExtResource( 1 )

@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/game/game.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/game/test_game.tscn" type="PackedScene" id=2]
+
+[node name="demo" instance=ExtResource( 1 )]
+next_scene = ExtResource( 2 )
+menu_name = 2
+extra_questions = false
+win_message = "¡Muy Bien! Haz finalizado el tutorial. A continuación pasamos al juego definitivo. Por favor, presiona siguiente"
+tutorial = true
+
+[node name="cottage" parent="background/grid" index="2"]
+frame = 3
+
+[node name="Clock" parent="background" index="1"]
+timeout = 0.0
+
+[node name="helpPanel" parent="background" index="4"]
+margin_top = 186.0
+margin_bottom = 445.0
+
+[editable path="book"]

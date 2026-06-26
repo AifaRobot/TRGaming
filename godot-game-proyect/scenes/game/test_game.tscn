@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/game/game.tscn" type="PackedScene" id=1]
+
+[node name="game" instance=ExtResource( 1 )]
+path_size = 20
+win_message = "Felicidades!! Llegaste al destino! Antes de finalizar, nos gustaría que respondas algunas preguntas."
+lost_message = "¡Te te has quedado sin tiempo! Antes de finalizar, nos gustaría que respondas algunas preguntas"
+
+[node name="cottage" parent="background/grid" index="2"]
+frame = 1
+[connection signal="out_of_time" from="background/Clock" to="." method="lost"]
+
+[editable path="book"]
